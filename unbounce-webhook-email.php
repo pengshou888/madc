@@ -32,7 +32,7 @@ Page ID: $page_id \n
 URL: $page_url \n
 Variant: $variant \n
 EOM;
-mail('Your Email Address',
+mail('shouhua.peng@moodys.com',
      'New Unbounce Form Submission!',
      $message_body);
 ?>
