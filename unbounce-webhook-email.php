@@ -19,18 +19,10 @@ if (get_magic_quotes_gpc()) {
   $unescaped_post_data = $_POST;
 }
 $form_data = json_decode($unescaped_post_data['data_json']);
-// If your form data has an 'Email Address' field, here's how you extract it:     
-$email_address = $form_data->email_address[0];
-// Grab the remaining page data...                                                
-$page_id = $_POST['page_id'];
-$page_url = $_POST['page_url'];
-$variant = $_POST['variant'];
+
 // Assemble the body of the email...                                              
 $message_body = <<<EOM
-Email: $email_address \n
-Page ID: $page_id \n
-URL: $page_url \n
-Variant: $variant \n
+form data: $form_data \n
 EOM;
 mail('shouhua.peng@moodys.com',
      'New Unbounce Form Submission!',
